@@ -2,36 +2,63 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>점심 추천기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🍕🥘점메추🦐🍜</title>
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      margin-top: 50px;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
     }
+
     .box {
-      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
       border-radius: 12px;
-      background-color: #f9f9f9;
-      display: inline-block;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
     }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
       cursor: pointer;
       border: none;
       background-color: #4CAF50;
       color: white;
-      border-radius: 6px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     #result {
       margin-top: 20px;
-      font-size: 24px;
+      font-size: 1.2em;
       font-weight: bold;
+      word-break: keep-all;
     }
   </style>
 </head>
@@ -42,7 +69,6 @@
     <button onclick="pickPlace()">추천 받기</button>
     <div id="result">👉 여기에 추천이 표시됩니다</div>
   </div>
-
 
   <script>
     const places = ['브리또', '맥날', '우동','마라탕', '카레', '롯리', '아늑', '도레미', '엽떡', '라멘', '신전', '샤브샤브', '이둔자'];
