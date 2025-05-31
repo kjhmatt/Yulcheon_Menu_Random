@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>점심 추천기</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .box {
+      padding: 30px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🍱 점심 뭐 먹지?</h1>
+    <p>무작위 추천을 받아보세요!</p>
+    <button onclick="pickPlace()">추천 받기</button>
+    <div id="result">👉 여기에 추천이 표시됩니다</div>
+  </div>
+
+  <py-script>
+import numpy as np
+integers = np.random.randint(0, 100, 100)
+print("100개의 무작위 정수:", integers)
+  </py-script>
+
+  <script>
+    const places = ['브리또', '맥날', '우동','마라탕', '카레', '롯리', '아늑', '도레미', '엽떡', '라멘', '신전', '샤브샤브', '이둔자'];
+
+    function pickPlace() {
+      const randomPlace = places[Math.floor(Math.random() * places.length)];
+      document.getElementById('result').innerText = "👉 오늘은 여기 어때? " + randomPlace;
+    }
+  </script>
+</body>
+</html>
