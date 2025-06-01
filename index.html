@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🍕🥘점메추🦐🍜</title>
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -11,20 +11,29 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-color: #f0f0f0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px; /* 👈 좌우 여백 */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
     }
 
     .box {
-      width: 90%;
+      width: 100%;
       max-width: 400px;
-      padding: 20px;
+      padding: 24px;
       border-radius: 12px;
       background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
 
@@ -63,12 +72,20 @@
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>🍱 점심 뭐 먹지?</h1>
-    <p>무작위 추천을 받아보세요!</p>
-    <button onclick="pickPlace()">추천 받기</button>
-    <div id="result">👉 여기에 추천이 표시됩니다</div>
+  <div class="container">
+    <div class="box">
+      <h1>🍱 점심 뭐 먹지?</h1>
+      <p>무작위 추천을 받아보세요!</p>
+      <button onclick="pickPlace()">추천 받기</button>
+      <div id="result">👉 여기에 추천이 표시됩니다</div>
+    </div>
   </div>
+
+  <py-script>
+import numpy as np
+integers = np.random.randint(0, 100, 100)
+print("100개의 무작위 정수:", integers)
+  </py-script>
 
   <script>
     const places = ['브리또', '맥날', '우동','마라탕', '카레', '롯리', '아늑', '도레미', '엽떡', '라멘', '신전', '샤브샤브', '이둔자'];
